@@ -20,22 +20,16 @@ class Inventory::Cfn < Inventory::Base
   ]
   ACTIVE_STATUSES = ALL_STATUSES - %w[DELETE_COMPLETE]
 
-  def report
-    results = []
-    stack_summaries.each do |summary|
-      results << [summary.stack_name, summary.template_description]
-    end
-    results.sort_by! {|a| a[0]}
-    results.unshift(header)
-
-    # print results
-    results.each do |item|
-      puts item.join("\t")
-    end
-  end
-
   def header
     ["Stack Name", "Description"]
+  end
+
+  def data
+    data = []
+    stack_summaries.each do |summary|
+      data << [summary.stack_name, summary.template_description]
+    end
+    data
   end
 
   def stack_summaries

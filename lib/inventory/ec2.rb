@@ -1,25 +1,23 @@
 class Inventory::Ec2 < Inventory::Base
-  def report
-    results = []
+  def header
+    ["Name", "Instance Id", "Instance Type", "Security Groups"]
+  end
+
+  def data
+    data = []
     instances.each do |i|
       tags = i.tags
       name_tag = tags.find { |t| t.key == "Name" }
       name = name_tag.value if name_tag
-      security_groups = i.security_groups.map {|sg| sg.group_name}.join(', ')
-      row = [name, i.instance_id, i.instance_type, security_groups].compact
-      results << row
+      group_names = security_group_names(i)
+      row = [name, i.instance_id, i.instance_type, group_names].compact
+      data << row
     end
-    results.sort_by! {|a| a[0]}
-    results.unshift(header)
-
-    # print results
-    results.each do |row|
-      puts row.join("\t")
-    end
+    data
   end
 
-  def header
-    ["Name", "Instance Id", "Instance Type", "Security Groups"]
+  def security_group_names(instance)
+    instance.security_groups.map {|sg| sg.group_name}.join(', ')
   end
 
   def security_groups
