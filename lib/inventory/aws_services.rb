@@ -16,4 +16,8 @@ module Inventory::AwsServices
   def rds
     @rds ||= Aws::RDS::Client.new
   end
+
+  def route53
+    @route53 ||= Aws::Route53::Client.new
+  end
 end

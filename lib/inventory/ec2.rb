@@ -10,7 +10,7 @@ class Inventory::Ec2 < Inventory::Base
       name_tag = tags.find { |t| t.key == "Name" }
       name = name_tag.value if name_tag
       group_names = security_group_names(i)
-      row = [name, i.instance_id, i.instance_type, group_names].compact
+      row = [name, i.instance_id, i.instance_type, group_names]
       data << row
     end
     data

@@ -14,4 +14,5 @@ module Inventory
   autoload :Vpc, "inventory/vpc"
   autoload :SecurityGroup, "inventory/security_group"
   autoload :Rds, "inventory/rds"
+  autoload :Route53, "inventory/route53"
 end

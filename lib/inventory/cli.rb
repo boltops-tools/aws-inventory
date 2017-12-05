@@ -35,5 +35,11 @@ module Inventory
     def rds
       Rds.new(options).report
     end
+
+    desc "route53", "report route53 inventory"
+    long_desc Help.text(:route53)
+    def route53
+      Route53.new(options).report
+    end
   end
 end
