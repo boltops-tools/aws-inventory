@@ -1,42 +1,22 @@
 # Inventory
 
-[![Build Status](https://magnum.travis-ci.com/)](https://magnum.travis-ci.com/)
-[![Code Climate](https://codeclimate.com/)](https://codeclimate.com/)
-[![Code Climate](https://codeclimate.com/)](https://codeclimate.com/)
+AWS Inventory tool.
 
-To these the inventory, run these commands:
-
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```sh
-gem "inventory"
-```
-
-And then execute:
-
-```sh
-$ bundle
-```
-
-Or install it yourself as:
-
-```sh
-$ gem install inventory
-```
 ## Usage
 
 ```sh
-exe/inventory hello yourname
+exe/inventory ec2
+exe/inventory cfn
+exe/inventory sg
+exe/inventory vpc
+exe/inventory help
 ```
 
-## Contributing
+## Example
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am "Add some feature"`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```sh
+$ exe/inventory ec2
+Name  Instance Id Instance Type Security Groups
+name1 i-123 t2.micro  sg1,sg2
+name2  i-456 c3.2xlarge  s1
+```
