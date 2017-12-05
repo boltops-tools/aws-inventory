@@ -1,7 +1,6 @@
 module Inventory
   class CLI < Command
     class_option :verbose, type: :boolean
-    class_option :noop, type: :boolean
 
     desc "cfn", "report cfn inventory"
     long_desc Help.text(:cfn)

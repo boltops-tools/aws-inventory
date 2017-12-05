@@ -7,7 +7,7 @@ require "spec_helper"
 #   $ rake clean:vcr ; time rake
 describe Inventory::CLI do
   before(:all) do
-    @args = "--noop"
+    @args = ""
   end
 
   %w[cfn ec2 vpc sg rds route53 acm].each do |command|

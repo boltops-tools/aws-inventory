@@ -11,10 +11,7 @@ class Inventory::Base
   end
 
   def report
-    if @options[:noop]
-      puts "Testing #{self.class} report"
-      return
-    end
+    return if test_mode
 
     results = sort(data)
     results.unshift(header) if header
@@ -25,5 +22,12 @@ class Inventory::Base
 
   def sort(data)
     data.sort_by {|a| a[0]}
+  end
+
+  def test_mode
+    if ENV['TEST']
+      puts "Testing #{self.class} report"
+      true
+    end
   end
 end
