@@ -22,7 +22,7 @@ class Inventory::Cfn < Inventory::Base
 
   def report
     data = []
-    data << %w[Name Description]
+    data << header
     stack_summaries.each do |summary|
       data << [summary.stack_name, summary.template_description]
     end
@@ -40,6 +40,10 @@ class Inventory::Cfn < Inventory::Base
     #   table.rows << [summary.stack_name, summary.template_description]
     # end
     # puts table
+  end
+
+  def header
+    ["Stack Name", "Description"]
   end
 
   def stack_summaries

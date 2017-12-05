@@ -12,6 +12,12 @@ module Inventory
       Cfn.new(options).report
     end
 
+    desc "ec2", "report ec2 inventory"
+    long_desc Help.text(:ec2)
+    def ec2
+      Ec2.new(options).report
+    end
+
     desc "vpc", "report vpc inventory"
     long_desc Help.text(:vpc)
     def vpc
