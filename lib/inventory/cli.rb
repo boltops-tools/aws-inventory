@@ -7,12 +7,10 @@ module Inventory
     class_option :verbose, type: :boolean
     class_option :noop, type: :boolean
 
-    desc "hello NAME", "say hello to NAME"
-    long_desc Help.hello
-    option :from, desc: "from person"
-    def hello(name)
-      puts "from: #{options[:from]}" if options[:from]
-      puts "Hello #{name}"
+    desc "cfn", "report cfn inventory"
+    long_desc Help.cfn
+    def cfn
+      Cfn.new(options).report
     end
 
   end

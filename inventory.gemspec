@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Inventory::VERSION
   spec.authors       = ["Tung Nguyen"]
   spec.email         = ["tongueroo@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Tool to inventory AWS account}
+  spec.summary       = %q{Tool to inventory AWS account}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -22,6 +22,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor"
   spec.add_dependency "hashie"
   spec.add_dependency "colorize"
+  spec.add_dependency "aws-sdk"
+  spec.add_dependency "activesupport"
+  spec.add_dependency "text-table"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "byebug"

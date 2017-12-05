@@ -2,9 +2,9 @@ module Inventory
   class CLI < Command
     class Help
       class << self
-        def hello
+        def cfn
 <<-EOL
-Hello world example
+Reports the cfn inventory
 EOL
         end
       end
