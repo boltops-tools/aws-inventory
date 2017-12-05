@@ -1,5 +1,4 @@
 require "thor"
-require "inventory/cli/help"
 
 module Inventory
 
@@ -8,10 +7,15 @@ module Inventory
     class_option :noop, type: :boolean
 
     desc "cfn", "report cfn inventory"
-    long_desc Help.cfn
+    long_desc Help.text(:cfn)
     def cfn
       Cfn.new(options).report
     end
 
+    desc "vpc", "report vpc inventory"
+    long_desc Help.text(:vpc)
+    def vpc
+      Vpc.new(options).report
+    end
   end
 end

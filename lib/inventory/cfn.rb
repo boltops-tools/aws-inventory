@@ -1,6 +1,4 @@
-require 'text-table'
-
-class Inventory::Cfn
+class Inventory::Cfn < Inventory::Base
   ALL_STATUSES = %w[
     REVIEW_IN_PROGRESS
     CREATE_FAILED
@@ -22,19 +20,26 @@ class Inventory::Cfn
   ]
   ACTIVE_STATUSES = ALL_STATUSES - %w[DELETE_COMPLETE]
 
-  include Inventory::AwsServices
-
-  def initialize(options)
-    @options = options
-  end
-
   def report
-    table = Text::Table.new
-    table.head = %w[Name Description]
+    data = []
+    data << %w[Name Description]
     stack_summaries.each do |summary|
-      table.rows << [summary.stack_name, summary.template_description]
+      data << [summary.stack_name, summary.template_description]
     end
-    puts table
+    data.each do |item|
+      puts item.join("\t")
+    end
+
+    # stack_summaries.each do |summary|
+    #   table.rows << [summary.stack_name, summary.template_description]
+    # end
+
+    # table = Text::Table.new
+    # table.head = %w[Name Description]
+    # stack_summaries.each do |summary|
+    #   table.rows << [summary.stack_name, summary.template_description]
+    # end
+    # puts table
   end
 
   def stack_summaries
