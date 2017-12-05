@@ -23,5 +23,11 @@ module Inventory
     def vpc
       Vpc.new(options).report
     end
+
+    desc "sg", "report security group inventory"
+    long_desc Help.text(:sg)
+    def sg
+      SecurityGroup.new(options).report
+    end
   end
 end

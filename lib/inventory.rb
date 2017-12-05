@@ -12,4 +12,5 @@ module Inventory
   autoload :Cfn, "inventory/cfn"
   autoload :Ec2, "inventory/ec2"
   autoload :Vpc, "inventory/vpc"
+  autoload :SecurityGroup, "inventory/security_group"
 end

@@ -11,10 +11,14 @@ class Inventory::Base
   end
 
   def report
-    results = data.sort_by {|a| a[0]}
+    results = sort(data)
     results.unshift(header)
     results.each do |row|
       puts row.join("\t")
     end
+  end
+
+  def sort(data)
+    data.sort_by {|a| a[0]}
   end
 end
