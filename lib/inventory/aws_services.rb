@@ -20,4 +20,8 @@ module Inventory::AwsServices
   def route53
     @route53 ||= Aws::Route53::Client.new
   end
+
+  def acm
+    @acm ||= Aws::ACM::Client.new
+  end
 end

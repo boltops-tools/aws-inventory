@@ -1,7 +1,4 @@
-require "thor"
-
 module Inventory
-
   class CLI < Command
     class_option :verbose, type: :boolean
     class_option :noop, type: :boolean
@@ -40,6 +37,12 @@ module Inventory
     long_desc Help.text(:route53)
     def route53
       Route53.new(options).report
+    end
+
+    desc "acm", "report acm inventory"
+    long_desc Help.text(:acm)
+    def acm
+      Acm.new(options).report
     end
   end
 end

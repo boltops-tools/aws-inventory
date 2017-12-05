@@ -4,16 +4,14 @@ class Inventory::Ec2 < Inventory::Base
   end
 
   def data
-    data = []
-    instances.each do |i|
+    instances.map do |i|
       tags = i.tags
       name_tag = tags.find { |t| t.key == "Name" }
       name = name_tag.value if name_tag
       group_names = security_group_names(i)
-      row = [name, i.instance_id, i.instance_type, group_names]
-      data << row
+
+      [name, i.instance_id, i.instance_type, group_names]
     end
-    data
   end
 
   def security_group_names(instance)

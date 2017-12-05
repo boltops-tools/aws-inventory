@@ -4,7 +4,7 @@ class Inventory::SecurityGroup < Inventory::Base
   end
 
   def data
-    data = [
+    [
       ["Total", security_groups.size],
       ["Used", used_security_groups.size],
       ["Unused", unused_security_groups.size],

@@ -15,4 +15,5 @@ module Inventory
   autoload :SecurityGroup, "inventory/security_group"
   autoload :Rds, "inventory/rds"
   autoload :Route53, "inventory/route53"
+  autoload :Acm, "inventory/acm"
 end

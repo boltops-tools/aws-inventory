@@ -6,6 +6,7 @@ PATH
       aws-sdk
       colorize
       hashie
+      text-table
       thor
 
 GEM
@@ -603,6 +604,7 @@ GEM
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
     slop (3.6.0)
+    text-table (1.2.4)
     thor (0.19.1)
     thread_safe (0.3.6)
     timers (4.0.1)

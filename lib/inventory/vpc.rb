@@ -4,13 +4,18 @@ class Inventory::Vpc < Inventory::Base
   end
 
   def data
-    data = []
-    vpcs.each do |vpc|
+    vpcs.map do |vpc|
       subnets = subnets_for(vpc)
       instances = instances_in(subnets)
-      data << [vpc_name(vpc.vpc_id), vpc.vpc_id, vpc.cidr_block, subnets.count, instances.count]
+
+      [
+        vpc_name(vpc.vpc_id),
+        vpc.vpc_id,
+        vpc.cidr_block,
+        subnets.count,
+        instances.count
+      ]
     end
-    data
   end
 
   # Pretty vpc name

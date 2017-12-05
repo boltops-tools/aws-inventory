@@ -11,6 +11,11 @@ class Inventory::Base
   end
 
   def report
+    if @options[:noop]
+      puts "Testing #{self.class} report"
+      return
+    end
+
     results = sort(data)
     results.unshift(header) if header
     results.each do |row|

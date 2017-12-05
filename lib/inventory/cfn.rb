@@ -25,11 +25,9 @@ class Inventory::Cfn < Inventory::Base
   end
 
   def data
-    data = []
-    stack_summaries.each do |summary|
-      data << [summary.stack_name, summary.template_description]
+    stack_summaries.map do |summary|
+      [summary.stack_name, summary.template_description]
     end
-    data
   end
 
   def stack_summaries

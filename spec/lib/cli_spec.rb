@@ -7,13 +7,13 @@ require "spec_helper"
 #   $ rake clean:vcr ; time rake
 describe Inventory::CLI do
   before(:all) do
-    @args = "--from Tung"
+    @args = "--noop"
   end
 
-  describe "inventory" do
-    it "should hello world" do
-      out = execute("exe/inventory hello world #{@args}")
-      expect(out).to include("from: Tung\nHello world")
+  %w[cfn ec2 vpc sg rds route53 acm].each do |command|
+    it command do
+      out = execute("exe/inventory #{command} #{@args}")
+      expect(out).to include("report")
     end
   end
 end

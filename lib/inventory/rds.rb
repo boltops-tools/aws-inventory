@@ -5,9 +5,8 @@ class Inventory::Rds < Inventory::Base
   end
 
   def data
-    data = []
-    db_instances.each do |db|
-      row = [
+    db_instances.map do |db|
+      [
         db.db_name,
         db.engine,
         db.db_instance_class,
@@ -15,9 +14,7 @@ class Inventory::Rds < Inventory::Base
         vpc_name(db),
         vpc_security_groups(db),
       ]
-      data << row
     end
-    data
   end
 
   # pretty name of vpc
