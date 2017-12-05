@@ -21,25 +21,17 @@ class Inventory::Cfn < Inventory::Base
   ACTIVE_STATUSES = ALL_STATUSES - %w[DELETE_COMPLETE]
 
   def report
-    data = []
-    data << header
+    results = []
     stack_summaries.each do |summary|
-      data << [summary.stack_name, summary.template_description]
+      results << [summary.stack_name, summary.template_description]
     end
-    data.each do |item|
+    results.sort_by! {|a| a[0]}
+    results.unshift(header)
+
+    # print results
+    results.each do |item|
       puts item.join("\t")
     end
-
-    # stack_summaries.each do |summary|
-    #   table.rows << [summary.stack_name, summary.template_description]
-    # end
-
-    # table = Text::Table.new
-    # table.head = %w[Name Description]
-    # stack_summaries.each do |summary|
-    #   table.rows << [summary.stack_name, summary.template_description]
-    # end
-    # puts table
   end
 
   def header
@@ -48,5 +40,19 @@ class Inventory::Cfn < Inventory::Base
 
   def stack_summaries
     @stack_summaries ||= cfn.list_stacks(stack_status_filter: ACTIVE_STATUSES).stack_summaries
+  end
+
+  # unused right now but leaving around to later figure out how to integrate
+  def text_table
+    stack_summaries.each do |summary|
+      table.rows << [summary.stack_name, summary.template_description]
+    end
+
+    table = Text::Table.new
+    table.head = %w[Name Description]
+    stack_summaries.each do |summary|
+      table.rows << [summary.stack_name, summary.template_description]
+    end
+    puts table
   end
 end

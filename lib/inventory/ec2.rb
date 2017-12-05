@@ -10,8 +10,9 @@ class Inventory::Ec2 < Inventory::Base
       results << row
     end
     results.sort_by! {|a| a[0]}
-
     results.unshift(header)
+
+    # print results
     results.each do |row|
       puts row.join("\t")
     end
