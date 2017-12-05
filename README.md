@@ -1,6 +1,6 @@
 # Inventory
 
-AWS Inventory tool.
+AWS Inventory tool. Useful to get summarized information on an client's AWS account for a Cloud Assessment report.
 
 ## Usage
 
