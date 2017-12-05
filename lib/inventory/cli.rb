@@ -29,5 +29,11 @@ module Inventory
     def sg
       SecurityGroup.new(options).report
     end
+
+    desc "rds", "report rds inventory"
+    long_desc Help.text(:rds)
+    def rds
+      Rds.new(options).report
+    end
   end
 end

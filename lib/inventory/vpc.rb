@@ -6,13 +6,19 @@ class Inventory::Vpc < Inventory::Base
   def data
     data = []
     vpcs.each do |vpc|
-      tag = vpc.tags.find {|t| t.key == "Name"}
-      name = tag ? tag.value : "(unnamed)"
       subnets = subnets_for(vpc)
       instances = instances_in(subnets)
-      data << [name, vpc.vpc_id, vpc.cidr_block, subnets.count, instances.count]
+      data << [vpc_name(vpc.vpc_id), vpc.vpc_id, vpc.cidr_block, subnets.count, instances.count]
     end
     data
+  end
+
+  # Pretty vpc name
+  # Use vpc_id as argument so other classes can use this method also
+  def vpc_name(vpc_id)
+    vpc = vpcs.find { |vpc| vpc.vpc_id == vpc_id }
+    tag = vpc.tags.find {|t| t.key == "Name"}
+    name = tag ? tag.value : "(unnamed)"
   end
 
   def vpcs

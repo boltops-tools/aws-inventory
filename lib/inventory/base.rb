@@ -12,7 +12,7 @@ class Inventory::Base
 
   def report
     results = sort(data)
-    results.unshift(header)
+    results.unshift(header) if header
     results.each do |row|
       puts row.join("\t")
     end

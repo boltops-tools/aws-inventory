@@ -12,4 +12,8 @@ module Inventory::AwsServices
   def pricing
     @pricing ||= Aws::Pricing::Client.new
   end
+
+  def rds
+    @rds ||= Aws::RDS::Client.new
+  end
 end

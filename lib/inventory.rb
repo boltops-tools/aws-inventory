@@ -13,4 +13,5 @@ module Inventory
   autoload :Ec2, "inventory/ec2"
   autoload :Vpc, "inventory/vpc"
   autoload :SecurityGroup, "inventory/security_group"
+  autoload :Rds, "inventory/rds"
 end
