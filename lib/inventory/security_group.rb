@@ -1,6 +1,6 @@
 class Inventory::SecurityGroup < Inventory::Base
   def header
-    ["Security Groups Summary:", ""]
+    ["Security Group", "Count"]
   end
 
   def data
