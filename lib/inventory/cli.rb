@@ -55,5 +55,11 @@ module Inventory
     def eb
       Eb.new(options).report
     end
+
+    desc "ecs", "report ecs inventory"
+    long_desc Help.text(:ecs)
+    def ecs
+      Ecs.new(options).report
+    end
   end
 end

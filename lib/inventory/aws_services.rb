@@ -38,4 +38,8 @@ module Inventory::AwsServices
   def eb
     @eb ||= Aws::ElasticBeanstalk::Client.new
   end
+
+  def ecs
+    @ecs ||= Aws::ECS::Client.new
+  end
 end
