@@ -5,11 +5,16 @@ AWS Inventory tool. Useful to get summarized information on an client's AWS acco
 ## Usage
 
 ```sh
-exe/inventory ec2
 exe/inventory cfn
-exe/inventory sg
+exe/inventory ec2
 exe/inventory vpc
-exe/inventory help
+exe/inventory sg
+exe/inventory rds
+exe/inventory route53
+exe/inventory acm
+exe/inventory elb
+exe/inventory eb
+exe/inventory ecs
 ```
 
 ## Example
