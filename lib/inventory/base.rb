@@ -26,8 +26,46 @@ class Inventory::Base
 
   def test_mode
     if ENV['TEST']
-      puts "Testing #{self.class} report"
+      puts "Testing #{self.class} report" # specs tests against this
       true
+    end
+  end
+
+  class << self
+    # Track all command subclasses.
+    def subclasses
+      @subclasses ||= []
+    end
+
+    def inherited(base)
+      super
+
+      if base.name
+        self.subclasses << base
+      end
+    end
+
+    # Thought this might be useful for
+    # specs. Eager load all classes so then we can loop thorugh the
+    # methods and run specs on any new cli commands.
+    # The rspec code turn out a too ugly to follow though. Leaving this
+    # around in case eager_laod is useful for other purposes
+    def eager_load!
+      path = File.expand_path("../", __FILE__)
+
+      Dir.glob("#{path}/**/*.rb").select do |path|
+        next if !File.file?(path) or path =~ /version/
+
+        class_name = path
+                      .sub('.rb','')
+                      .sub(%r{.*/inventory}, 'inventory')
+                      .camelize
+        # special rules
+        class_name.sub!("Cli", "CLI")
+
+        class_name.constantize # use constantize instead of require
+          # so we dont have to worry about require order.
+      end
     end
   end
 end

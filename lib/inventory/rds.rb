@@ -54,19 +54,4 @@ class Inventory::Rds < Inventory::Base
   def security_group_names(instance)
     instance.security_groups.map {|sg| sg.group_name}.join(', ')
   end
-
-  def security_groups
-    @security_groups ||= ec2.describe_security_groups.security_groups
-  end
-
-  def instances
-    return @instances if @instances
-
-    @instances = []
-    resp = ec2.describe_instances
-    resp.reservations.each do |res|
-      @instances += res.instances
-    end
-    @instances
-  end
 end

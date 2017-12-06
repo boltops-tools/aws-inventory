@@ -1,6 +1,8 @@
 require 'aws-sdk'
 
 module Inventory::AwsServices
+  include Inventory::Shared
+
   def cfn
     @cfn ||= Aws::CloudFormation::Client.new
   end
@@ -23,5 +25,13 @@ module Inventory::AwsServices
 
   def acm
     @acm ||= Aws::ACM::Client.new
+  end
+
+  def elbv1
+    @elbv1 ||= Aws::ElasticLoadBalancing::Client.new
+  end
+
+  def elbv2
+    @elbv2 ||= Aws::ElasticLoadBalancingV2::Client.new
   end
 end

@@ -52,15 +52,4 @@ class Inventory::Vpc < Inventory::Base
   def subnets
     @subnets ||= ec2.describe_subnets.subnets
   end
-
-  def instances
-    return @instances if @instances
-
-    @instances = []
-    resp = ec2.describe_instances
-    resp.reservations.each do |res|
-      @instances += res.instances
-    end
-    @instances
-  end
 end

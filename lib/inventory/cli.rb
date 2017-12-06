@@ -43,5 +43,11 @@ module Inventory
     def acm
       Acm.new(options).report
     end
+
+    desc "elb", "report elb inventory"
+    long_desc Help.text(:elb)
+    def elb
+      Elb.new(options).report
+    end
   end
 end

@@ -10,7 +10,7 @@ describe Inventory::CLI do
     @args = ""
   end
 
-  %w[cfn ec2 vpc sg rds route53 acm].each do |command|
+  %w[cfn ec2 vpc sg rds route53 acm elb].each do |command|
     it command do
       out = execute("exe/inventory #{command} #{@args}")
       expect(out).to include("report")

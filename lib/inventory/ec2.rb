@@ -18,21 +18,6 @@ class Inventory::Ec2 < Inventory::Base
     instance.security_groups.map {|sg| sg.group_name}.join(', ')
   end
 
-  def security_groups
-    @security_groups ||= ec2.describe_security_groups.security_groups
-  end
-
-  def instances
-    return @instances if @instances
-
-    @instances = []
-    resp = ec2.describe_instances
-    resp.reservations.each do |res|
-      @instances += res.instances
-    end
-    @instances
-  end
-
   # Currently dont have access to the pricing api so skipping
   # def describe_pricing
   #   resp = pricing.describe_services(
