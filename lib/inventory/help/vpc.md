@@ -1,1 +1,1 @@
-Reports the vpc inventory
+Reports the VPC inventory

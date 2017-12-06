@@ -19,4 +19,5 @@ module Inventory
   autoload :Route53, "inventory/route53"
   autoload :Acm, "inventory/acm"
   autoload :Elb, "inventory/elb"
+  autoload :Eb, "inventory/eb"
 end

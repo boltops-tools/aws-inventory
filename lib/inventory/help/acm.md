@@ -1,1 +1,1 @@
-Reports the acm inventory
+Reports the AWS Certificate Manager inventory

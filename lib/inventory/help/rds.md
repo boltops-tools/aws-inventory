@@ -1,1 +1,1 @@
-Reports the rds inventory
+Reports the RDS inventory

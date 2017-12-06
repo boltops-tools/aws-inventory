@@ -1,1 +1,1 @@
-Reports the ec2 inventory
+Reports the EC2 inventory

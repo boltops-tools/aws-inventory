@@ -1,1 +1,1 @@
-Reports the cfn inventory
+Reports the CloudFormation inventory

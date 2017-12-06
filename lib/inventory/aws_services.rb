@@ -34,4 +34,8 @@ module Inventory::AwsServices
   def elbv2
     @elbv2 ||= Aws::ElasticLoadBalancingV2::Client.new
   end
+
+  def eb
+    @eb ||= Aws::ElasticBeanstalk::Client.new
+  end
 end

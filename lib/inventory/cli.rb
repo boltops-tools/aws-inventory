@@ -49,5 +49,11 @@ module Inventory
     def elb
       Elb.new(options).report
     end
+
+    desc "eb", "report eb inventory"
+    long_desc Help.text(:eb)
+    def eb
+      Eb.new(options).report
+    end
   end
 end
