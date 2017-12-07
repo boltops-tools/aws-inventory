@@ -61,5 +61,11 @@ module Inventory
     def ecs
       Ecs.new(options).report
     end
+
+    desc "keypair", "report keypair inventory"
+    long_desc Help.text(:keypair)
+    def keypair
+      Keypair.new(options).report
+    end
   end
 end

@@ -21,4 +21,5 @@ module Inventory
   autoload :Elb, "inventory/elb"
   autoload :Eb, "inventory/eb"
   autoload :Ecs, "inventory/ecs"
+  autoload :Keypair, "inventory/keypair"
 end

@@ -33,3 +33,14 @@ You want to pipe this into a tool like pbcopy so that tabs, not spaces are copie
 ```sh
 $ exe/inventory ec2 | pbcopy
 ```
+
+### To Check Every Region for EC2 Instances
+
+```sh
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+for i in $(aws ec2 describe-regions | jq -r '.Regions[].RegionName') ; do
+  echo -e "$GREEN$i$NC"
+  AWS_REGION=$i inventory ec2
+done
+```
