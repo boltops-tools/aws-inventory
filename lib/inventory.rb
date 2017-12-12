@@ -3,6 +3,7 @@ require "inventory/version"
 require "text-table"
 require "active_support/all"
 require "pp"
+require "byebug"
 
 module Inventory
   autoload :Base, "inventory/base"

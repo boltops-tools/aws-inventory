@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "aws-sdk"
   spec.add_dependency "activesupport"
   spec.add_dependency "text-table"
+  spec.add_dependency "facets"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "byebug"

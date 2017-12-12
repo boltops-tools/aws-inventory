@@ -6,20 +6,12 @@ class Inventory::Iam < Inventory::Base
 
   # Default is the groups report because it seems like the most useful report
   def report
-    Summary.new(@options).report if show_summary
-    User.new(@options).report if show_users
-    Group.new(@options).report if show_groups
+    Summary.new(@options).report if show(:summary)
+    User.new(@options).report if show(:users)
+    Group.new(@options).report if show(:groups)
   end
 
-  def show_summary
-    %w[all summary].include?(@options[:report_type])
-  end
-
-  def show_users
-    %w[all users].include?(@options[:report_type])
-  end
-
-  def show_groups
-    %w[all groups].include?(@options[:report_type])
+  def show(report_type)
+    ["all", report_type.to_s].include?(@options[:report_type])
   end
 end
