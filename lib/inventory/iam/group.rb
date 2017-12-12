@@ -7,15 +7,16 @@ class Inventory::Iam
     end
 
     def data
-      groups.map do |group|
+      data = [["(groupless)", groupless_users.size, groupless_users.join(', ')]]
+      data += groups.map do |group|
         group_users = users_in_group(group.group_name)
-
         [
           group.group_name,
           group_users.size,
-          group_users.join(", ")
+          group_users.join(', ')
         ]
       end
+      data
     end
   end
 end

@@ -22,6 +22,13 @@ module Inventory::Iam::Shared
     selected_users.map { |a| a[0] }
   end
 
+  def groupless_users
+    selected_users = all_users.select do |user_name, group_names|
+        group_names.empty?
+      end
+      selected_users.map { |a| a[0] }
+  end
+
   # {
   #   "tung": ["admin", "developers"],
   #   "vuon": ["admin"],
