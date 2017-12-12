@@ -42,4 +42,8 @@ module Inventory::AwsServices
   def ecs
     @ecs ||= Aws::ECS::Client.new
   end
+
+  def iam
+    @iam ||= Aws::IAM::Client.new
+  end
 end

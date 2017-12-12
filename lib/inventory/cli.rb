@@ -67,5 +67,12 @@ module Inventory
     def keypair
       Keypair.new(options).report
     end
+
+    desc "iam", "report iam inventory"
+    long_desc Help.text(:iam)
+    option :report_type, default: "groups", desc: "all, users, or groups"
+    def iam
+      Iam.new(options).report
+    end
   end
 end

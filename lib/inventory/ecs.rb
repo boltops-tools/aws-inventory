@@ -1,11 +1,8 @@
-class Inventory::Ecs
+class Inventory::Ecs < Inventory::Base
   autoload :Service, "inventory/ecs/service"
   autoload :Cluster, "inventory/ecs/cluster"
 
-  def initialize(options)
-    @options = options
-  end
-
+  # Override report
   def report
     Service.new(@options).report
     Cluster.new(@options).report

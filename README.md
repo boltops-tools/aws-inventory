@@ -1,6 +1,6 @@
 # Inventory
 
-AWS Inventory tool. Useful to get summarized information on an client's AWS account for a Cloud Assessment report.  The tool is produces tab separated output that can be pasted into a spreadsheet and then copied to a Cloud Assessment report.
+AWS Inventory tool. Useful to get summarized information on AWS account.  The tool is produces tab separated output that can be pasted into a spreadsheet and then copied to a report.
 
 ## Usage
 
