@@ -24,4 +24,5 @@ module Inventory
   autoload :Ecs, "inventory/ecs"
   autoload :Keypair, "inventory/keypair"
   autoload :Iam, "inventory/iam"
+  autoload :Cloudwatch, "inventory/cloudwatch"
 end

@@ -46,4 +46,8 @@ module Inventory::AwsServices
   def iam
     @iam ||= Aws::IAM::Client.new
   end
+
+  def cw
+    @cw ||= Aws::CloudWatch::Client.new
+  end
 end

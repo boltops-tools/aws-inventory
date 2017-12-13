@@ -1,0 +1,1 @@
+Reports the CloudWatch inventory

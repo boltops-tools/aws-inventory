@@ -76,5 +76,11 @@ module Inventory
     def iam
       Iam.new(options).report
     end
+
+    desc "cw", "report cloudwatch inventory"
+    long_desc Help.text(:cw)
+    def cw
+      Cloudwatch.new(options).report
+    end
   end
 end
