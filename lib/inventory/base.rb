@@ -31,6 +31,10 @@ class Inventory::Base
     end
   end
 
+  def show(report_type)
+    ["all", report_type.to_s].include?(@options[:report_type])
+  end
+
   class << self
     # Track all command subclasses.
     def subclasses

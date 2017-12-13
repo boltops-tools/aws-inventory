@@ -8,8 +8,4 @@ class Inventory::SecurityGroup < Inventory::Base
     Summary.new(@options).report if show(:summary)
     Open.new(@options).report if show(:open)
   end
-
-  def show(report_type)
-    ["all", report_type.to_s].include?(@options[:report_type])
-  end
 end

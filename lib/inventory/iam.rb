@@ -10,8 +10,4 @@ class Inventory::Iam < Inventory::Base
     User.new(@options).report if show(:users)
     Group.new(@options).report if show(:groups)
   end
-
-  def show(report_type)
-    ["all", report_type.to_s].include?(@options[:report_type])
-  end
 end

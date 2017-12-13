@@ -8,8 +8,4 @@ class Inventory::Rds < Inventory::Base
     Summary.new(@options).report if show(:summary)
     Port.new(@options).report if show(:port)
   end
-
-  def show(report_type)
-    ["all", report_type.to_s].include?(@options[:report_type])
-  end
 end
