@@ -9,18 +9,26 @@ class Inventory::SecurityGroup
     end
 
     def data
-      all_data = security_groups.map do |sg|
-        ports = ports_open_to_world(sg)
+      opened_security_groups_in_use = opened_security_groups.select do |sg|
+        group_ids_in_use = used_security_groups.map(&:group_id)
+        group_ids_in_use.include?(sg.group_id)
+      end
 
+      # Only display used security groups that have opened ports for review.
+      # will delete the unused security groups anyway.
+      opened_security_groups_in_use.map do |sg|
+        ports = ports_open_to_world(sg)
         [
           sg.group_name,
           ports
         ]
       end
+    end
 
-      # filter for only security groups with open ports to the world
-      all_data.select do |data|
-        !data[1].empty?
+    def opened_security_groups
+      security_groups.select do |sg|
+        ports = ports_open_to_world(sg)
+        !ports.empty?
       end
     end
 
