@@ -29,6 +29,7 @@ module Inventory
 
     desc "rds", "report rds inventory"
     long_desc Help.text(:rds)
+    option :report_type, default: "summary", desc: "all, summary, or port"
     def rds
       Rds.new(options).report
     end
