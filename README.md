@@ -5,16 +5,19 @@ AWS Inventory tool. Useful to get summarized information on AWS account.  The to
 ## Usage
 
 ```sh
-exe/inventory cfn
-exe/inventory ec2
-exe/inventory vpc
-exe/inventory sg
-exe/inventory rds
-exe/inventory route53
-exe/inventory acm
-exe/inventory elb
-exe/inventory eb
-exe/inventory ecs
+exe/inventory acm             # report acm inventory
+exe/inventory cfn             # report cfn inventory
+exe/inventory cw              # report cloudwatch inventory
+exe/inventory eb              # report eb inventory
+exe/inventory ec2             # report ec2 inventory
+exe/inventory ecs             # report ecs inventory
+exe/inventory elb             # report elb inventory
+exe/inventory iam             # report iam inventory
+exe/inventory keypair         # report keypair inventory
+exe/inventory rds             # report rds inventory
+exe/inventory route53         # report route53 inventory
+exe/inventory sg              # report security group inventory
+exe/inventory vpc             # report vpc inventory
 ```
 
 ## Example
@@ -43,4 +46,15 @@ for i in $(aws ec2 describe-regions | jq -r '.Regions[].RegionName') ; do
   echo -e "$GREEN$i$NC"
   AWS_REGION=$i inventory ec2
 done
+```
+
+### Format Option
+
+There are 2 supported formats: tab and table.  The default is table.  To switch between formats use the INVENTORY_FORMAT environment variable.
+
+```sh
+export INVENTORY_FORMAT=tab
+exe/inventory ec2
+export INVENTORY_FORMAT=table
+exe/inventory ec2
 ```
