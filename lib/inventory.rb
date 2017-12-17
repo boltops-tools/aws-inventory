@@ -12,6 +12,7 @@ module Inventory
   autoload :CLI, "inventory/cli"
   autoload :AwsServices, "inventory/aws_services"
   autoload :Shared, "inventory/shared"
+  autoload :Presenter, "inventory/presenter"
   autoload :Cfn, "inventory/cfn"
   autoload :Ec2, "inventory/ec2"
   autoload :Vpc, "inventory/vpc"

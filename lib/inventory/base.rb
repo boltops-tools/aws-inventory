@@ -15,9 +15,8 @@ class Inventory::Base
 
     results = sort(data)
     results.unshift(header) if header
-    results.each do |row|
-      puts row.join("\t")
-    end
+    presenter = Inventory::Presenter.new(results)
+    presenter.display
   end
 
   def sort(data)
