@@ -22,19 +22,24 @@ aws-inventory vpc             # report vpc inventory
 
 ## Example
 
-What the output looks like:
+What the output looks something like:
 
 ```sh
 $ aws-inventory ec2
-Name  Instance Id Instance Type Security Groups
-name1 i-123 t2.micro  sg1,sg2
-name2  i-456 c3.2xlarge  s1
++-------+-------------+---------------+----------+-----------------+
+| Name  | Instance Id | Instance Type | Platform | Security Groups |
++-------+-------------+---------------+----------+-----------------+
+| name1 | i-123       | m3.medium     | linux    | sg-123          |
+| name2 | i-456       | t2.small      | linux    | sg-456          |
++-------+-------------+---------------+----------+-----------------+
+$
 ```
 
-You want to pipe this into a tool like pbcopy so that tabs, not spaces are copied into your buffer.  Example:
+If you want to copy this to an spreadsheet, you can use the tab format.  Here's an example with `pbcopy`:
 
 ```sh
-$ aws-inventory ec2 | pbcopy
+export AWS_INVENTORY_FORMAT=tab
+aws-inventory ec2 | pbcopy
 ```
 
 ### To Check Every Region for EC2 Instances
