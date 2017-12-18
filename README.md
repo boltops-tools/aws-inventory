@@ -1,6 +1,6 @@
 # AWS Inventory
 
-AWS Inventory tool. Useful to get summarized information on AWS account.  The tool is can produce a tab separated output report that can be pasted into a spreadsheet and then copied to a report.
+AWS Inventory tool. Useful to get summarized information on AWS account.  The tool by default produces a reoprt that can easily be read from a terminal, but it can also be used produce a tab separated output report that can be pasted into a spreadsheet and then copied to a report.  This is controlled via a `INVENTORY_FORMAT` env variable and covered in the Format Options section.
 
 ## Usage
 
