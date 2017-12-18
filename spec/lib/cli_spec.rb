@@ -11,20 +11,23 @@ describe Inventory::CLI do
   end
 
   %w[
+    acm
     cfn
+    cw
+    eb
     ec2
-    vpc
-    sg
+    ecs
+    elb
+    help
+    iam
+    keypair
     rds
     route53
-    acm
-    elb
-    eb
-    ecs
-    keypair
+    sg
+    vpc
   ].each do |command|
     it command do
-      out = execute("exe/inventory #{command} #{@args}")
+      out = execute("exe/aws-inventory #{command} #{@args}")
       expect(out).to include("report")
     end
   end

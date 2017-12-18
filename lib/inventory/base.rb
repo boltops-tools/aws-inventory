@@ -62,6 +62,7 @@ class Inventory::Base
         class_name = path
                       .sub('.rb','')
                       .sub(%r{.*/inventory}, 'inventory')
+                      .sub('presenters', 'presenter') # special rule
                       .camelize
         # special rules
         class_name.sub!("Cli", "CLI")
