@@ -25,9 +25,5 @@ class Inventory::Ecs::Service < Inventory::Base
         resp = ecs.describe_services(services: service_arns, cluster: cluster_arn)
         resp.services
       end.flatten
-
-    # pp @ecs_services
-    # @ecs_services
-    # @ecs_services ||= ecs.describe_services.services
   end
 end
