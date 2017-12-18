@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "inventory/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "inventory"
+  spec.name          = "aws-inventory"
   spec.version       = Inventory::VERSION
   spec.authors       = ["Tung Nguyen"]
   spec.email         = ["tongueroo@gmail.com"]
   spec.description   = %q{Tool to inventory AWS account}
   spec.summary       = %q{Tool to inventory AWS account}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/tongueroo/aws-inventory"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
