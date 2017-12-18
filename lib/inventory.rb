@@ -2,8 +2,6 @@ $:.unshift(File.expand_path("../", __FILE__))
 require "inventory/version"
 require "text-table"
 require "active_support/all"
-require "pp"
-require "byebug"
 
 module Inventory
   autoload :Base, "inventory/base"
