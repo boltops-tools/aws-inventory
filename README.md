@@ -1,6 +1,6 @@
 # AWS Inventory
 
-AWS Inventory tool. Useful to get summarized information on AWS account.  The tool by default produces a reoprt that can easily be read from a terminal, but it can also be used produce a tab separated output report that can be pasted into a spreadsheet and then copied to a report.  This is controlled via a `INVENTORY_FORMAT` env variable and covered in the Format Options section.
+AWS Inventory tool. Useful to get summarized information on AWS account.  The tool by default produces a reoprt that can easily be read from a terminal, but it can also be used produce a tab separated output report that can be pasted into a spreadsheet and then copied to a report.  This is controlled via a `AWS_INVENTORY_FORMAT` env variable and covered in the Format Options section.
 
 ## Usage
 
@@ -50,11 +50,11 @@ done
 
 ### Format Option
 
-There are 2 supported formats: tab and table.  The default is table.  To switch between formats use the INVENTORY_FORMAT environment variable.
+There are 2 supported formats: tab and table.  The default is table.  To switch between formats use the AWS_INVENTORY_FORMAT environment variable.
 
 ```sh
-export INVENTORY_FORMAT=tab
+export AWS_INVENTORY_FORMAT=tab
 aws-inventory ec2
-export INVENTORY_FORMAT=table
+export AWS_INVENTORY_FORMAT=table
 aws-inventory ec2
 ```

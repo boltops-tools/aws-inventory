@@ -15,6 +15,6 @@ class Inventory::Presenter
 
   # Formats: tabs, markdown
   def format
-    ENV['INVENTORY_FORMAT'] || "table"
+    ENV['AWS_INVENTORY_FORMAT'] || "table"
   end
 end
