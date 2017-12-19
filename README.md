@@ -48,7 +48,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 for i in $(aws ec2 describe-regions | jq -r '.Regions[].RegionName') ; do
   echo -e "$GREEN$i$NC"
-  AWS_REGION=$i inventory ec2
+  AWS_REGION=$i aws-inventory ec2
 done
 ```
 
