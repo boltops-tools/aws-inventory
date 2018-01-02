@@ -22,14 +22,14 @@ module Inventory
 
     desc "sg", "report security group inventory"
     long_desc Help.text(:sg)
-    option :report_type, default: "open", desc: "all, summary, open or unused"
+    option :report, default: "open", desc: "all, summary, open or unused"
     def sg
       SecurityGroup.new(options).report
     end
 
     desc "rds", "report rds inventory"
     long_desc Help.text(:rds)
-    option :report_type, default: "summary", desc: "all, summary, or port"
+    option :report, default: "summary", desc: "all, summary, or port"
     def rds
       Rds.new(options).report
     end
@@ -72,7 +72,7 @@ module Inventory
 
     desc "iam", "report iam inventory"
     long_desc Help.text(:iam)
-    option :report_type, default: "groups", desc: "all, groups, users, or summary"
+    option :report, default: "groups", desc: "all, groups, users, or summary"
     def iam
       Iam.new(options).report
     end

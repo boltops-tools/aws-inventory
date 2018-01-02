@@ -30,8 +30,8 @@ class Inventory::Base
     end
   end
 
-  def show(report_type)
-    ["all", report_type.to_s].include?(@options[:report_type])
+  def show(report)
+    ["all", report.to_s].include?(@options[:report])
   end
 
   class << self
@@ -62,10 +62,10 @@ class Inventory::Base
         class_name = path
                       .sub('.rb','')
                       .sub(%r{.*/inventory}, 'inventory')
-                      .sub('presenters', 'presenter') # special rule
                       .camelize
         # special rules
         class_name.sub!("Cli", "CLI")
+                  .sub!('Presenters', 'Presenter')
 
         class_name.constantize # use constantize instead of require
           # so we dont have to worry about require order.
