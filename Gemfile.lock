@@ -8,6 +8,7 @@ PATH
       colorize
       facets
       hashie
+      json
       text-table
       thor
 

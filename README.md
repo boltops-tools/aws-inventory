@@ -55,12 +55,14 @@ done
 
 ### Format Option
 
-There are 2 supported formats: tab and table.  The default is table.  To switch between formats use the AWS_INVENTORY_FORMAT environment variable.
+There are a few supported formats: tab, table and json.  The default is table.  To switch between formats use the AWS_INVENTORY_FORMAT environment variable.
 
 ```sh
 export AWS_INVENTORY_FORMAT=tab
 aws-inventory ec2
 export AWS_INVENTORY_FORMAT=table
+aws-inventory ec2
+export AWS_INVENTORY_FORMAT=json
 aws-inventory ec2
 ```
 
