@@ -22,7 +22,7 @@ module Inventory
 
     desc "sg", "report security group inventory"
     long_desc Help.text(:sg)
-    option :report_type, default: "open", desc: "all, summary, or open"
+    option :report_type, default: "open", desc: "all, summary, open or unused"
     def sg
       SecurityGroup.new(options).report
     end
