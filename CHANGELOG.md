@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [0.3.2]
+* fix unused security group report
+
 ## [0.3.1]
 * add json presenter
 * add unused security group report
