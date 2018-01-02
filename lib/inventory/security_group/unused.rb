@@ -3,12 +3,15 @@ class Inventory::SecurityGroup
     include Shared
 
     def header
-      ["Security Group Name"]
+      ["Security Group Name", "VPC Id"]
     end
 
     def data
-      used_security_groups.map do |sg|
-        sg.group_name
+      unused_security_groups.map do |sg|
+        [
+          sg.group_name,
+          sg.vpc_id
+        ]
       end
     end
   end
