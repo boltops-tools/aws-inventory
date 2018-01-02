@@ -1,9 +1,8 @@
 # AWS Inventory
 
-AWS Inventory tool. Useful to get summarized information on AWS account.  The tool by default produces a reoprt that can easily be read from a terminal, but it can also be used produce a tab separated output report that can be pasted into a spreadsheet and then copied to a report.  This is controlled via a `AWS_INVENTORY_FORMAT` env variable and covered in the Format Options section.
+AWS Inventory tool. Useful to get summarized information on AWS account.  The tool by default produces a report that can easily be read from a terminal, but it can also be used produce a tab separated output report that can be pasted into a spreadsheet and then copied to a report.  This is controlled via a `AWS_INVENTORY_FORMAT` env variable and covered in the Format Options section.
 
 ## Usage
-
 ```sh
 aws-inventory acm             # report acm inventory
 aws-inventory cfn             # report cfn inventory
@@ -49,7 +48,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 for i in $(aws ec2 describe-regions | jq -r '.Regions[].RegionName') ; do
   echo -e "$GREEN$i$NC"
-  AWS_REGION=$i inventory ec2
+  AWS_REGION=$i aws-inventory ec2
 done
 ```
 
