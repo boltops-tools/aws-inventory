@@ -8,6 +8,6 @@ class Inventory::SecurityGroup < Inventory::Base
   def report
     Summary.new(@options).report if show(:summary)
     Open.new(@options).report if show(:open)
-    Unused.new(@options.report).report if show(:unused)
+    Unused.new(@options).report if show(:unused)
   end
 end

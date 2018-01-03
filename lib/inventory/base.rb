@@ -15,7 +15,7 @@ class Inventory::Base
 
     results = sort(data)
     results.unshift(header) if header
-    presenter = Inventory::Presenter.new(results)
+    presenter = Inventory::Presenter.new(@options, results)
     presenter.display
   end
 

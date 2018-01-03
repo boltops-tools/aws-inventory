@@ -4,13 +4,14 @@ class Inventory::Presenter
   autoload :Table, "inventory/presenters/table"
   autoload :Json, "inventory/presenters/json"
 
-  def initialize(data)
+  def initialize(options, data)
+    @options = options
     @data = data
   end
 
   def display
     presenter_class = "Inventory::Presenter::#{format.classify}".constantize
-    presenter = presenter_class.new(@data)
+    presenter = presenter_class.new(@options, @data)
     presenter.display
   end
 
