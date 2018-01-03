@@ -3,14 +3,14 @@ class AwsInventory::SecurityGroup
     include Shared
 
     def header
-      ["Security Group Name", "VPC Id"]
+      ["Security Group Name", "Security Group Id"]
     end
 
     def data
       unused_security_groups.map do |sg|
         [
           sg.group_name,
-          sg.vpc_id
+          sg.group_id
         ]
       end
     end
