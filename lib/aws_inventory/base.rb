@@ -64,8 +64,8 @@ class AwsInventory::Base
                       .sub(%r{.*/aws_inventory}, 'aws_inventory')
                       .camelize
         # special rules
-        class_name.sub!("Cli", "CLI")
-                  .sub!('Presenters', 'Presenter')
+        class_name = class_name.sub("Cli", "CLI")
+                               .sub('Presenters', 'Presenter')
 
         class_name.constantize # use constantize instead of require
           # so we dont have to worry about require order.

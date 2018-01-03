@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aws-inventory (0.3.0)
+    aws-inventory (0.3.2)
       actionview
       activesupport
       aws-sdk
