@@ -8,7 +8,7 @@ ENV['HOME'] = "spec/fixtures/home"
 require "pp"
 
 root = File.expand_path("../../", __FILE__)
-require "#{root}/lib/aws_inventory"
+require "#{root}/lib/aws-inventory"
 
 module Helpers
   def execute(cmd)

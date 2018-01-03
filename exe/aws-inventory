@@ -8,7 +8,7 @@ Signal.trap("INT") {
 }
 
 $:.unshift(File.expand_path("../../lib", __FILE__))
-require "aws_inventory"
+require "aws-inventory"
 require "aws_inventory/cli"
 
 AwsInventory::CLI.start(ARGV)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aws-inventory (0.3.2)
+    aws-inventory (0.4.0)
       actionview
       activesupport
       aws-sdk
@@ -324,7 +324,7 @@ GEM
     aws-sdk-pricing (1.0.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
-    aws-sdk-rds (1.8.0)
+    aws-sdk-rds (1.9.0)
       aws-sdk-core (~> 3)
       aws-sigv4 (~> 1.0)
     aws-sdk-redshift (1.1.0)
@@ -600,7 +600,7 @@ GEM
     lumberjack (1.0.12)
     method_source (0.9.0)
     mini_portile2 (2.3.0)
-    minitest (5.11.0)
+    minitest (5.11.1)
     nenv (0.3.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
