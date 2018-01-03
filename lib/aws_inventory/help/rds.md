@@ -1,5 +1,5 @@
 Reports the RDS inventory
 
-$ inventory rds --report summary
+$ aws-inventory rds --report summary
 
-$ inventory rds --report port
+$ aws-inventory rds --report port

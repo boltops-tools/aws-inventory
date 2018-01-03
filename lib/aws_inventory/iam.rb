@@ -1,8 +1,8 @@
 class Inventory::Iam < Inventory::Base
-  autoload :Shared, "inventory/iam/shared"
-  autoload :Summary, "inventory/iam/summary"
-  autoload :User, "inventory/iam/user"
-  autoload :Group, "inventory/iam/group"
+  autoload :Shared, "aws_inventory/iam/shared"
+  autoload :Summary, "aws_inventory/iam/summary"
+  autoload :User, "aws_inventory/iam/user"
+  autoload :Group, "aws_inventory/iam/group"
 
   # Default is the groups report because it seems like the most useful report
   def report

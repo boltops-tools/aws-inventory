@@ -2,14 +2,14 @@ Reports the IAM inventory.
 
 List of groups and users in the groups:
 
-$ inventory iam --report groups # this is the default
+$ aws-inventory iam --report groups # this is the default
 
-$ inventory iam  # same as above
+$ aws-inventory iam  # same as above
 
 List of the users and their groups:
 
-$ inventory iam --report users
+$ aws-inventory iam --report users
 
 Summary of number of groups and users
 
-$ inventory iam --report summary
+$ aws-inventory iam --report summary

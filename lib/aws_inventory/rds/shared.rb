@@ -12,8 +12,8 @@ module Inventory::Rds::Shared
   end
 
   def lookup_vpc_name(vpc_id)
-    inventory_vpc = Inventory::Vpc.new(@options)
-    inventory_vpc.vpc_name(vpc_id)
+    aws_inventory_vpc = Inventory::Vpc.new(@options)
+    aws_inventory_vpc.vpc_name(vpc_id)
   end
 
   def vpcs

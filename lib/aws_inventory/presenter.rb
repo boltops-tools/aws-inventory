@@ -1,8 +1,8 @@
 class Inventory::Presenter
-  autoload :Base, "inventory/presenters/base"
-  autoload :Tab, "inventory/presenters/tab"
-  autoload :Table, "inventory/presenters/table"
-  autoload :Json, "inventory/presenters/json"
+  autoload :Base, "aws_inventory/presenters/base"
+  autoload :Tab, "aws_inventory/presenters/tab"
+  autoload :Table, "aws_inventory/presenters/table"
+  autoload :Json, "aws_inventory/presenters/json"
 
   def initialize(options, data)
     @options = options

@@ -1,7 +1,7 @@
 class Inventory::Rds < Inventory::Base
-  autoload :Shared, "inventory/rds/shared"
-  autoload :Summary, "inventory/rds/summary"
-  autoload :Port, "inventory/rds/port"
+  autoload :Shared, "aws_inventory/rds/shared"
+  autoload :Summary, "aws_inventory/rds/summary"
+  autoload :Port, "aws_inventory/rds/port"
 
   # Default is the open report because it seems like the most useful report
   def report

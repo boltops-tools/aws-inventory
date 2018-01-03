@@ -65,7 +65,7 @@ class Inventory::Elb < Inventory::Base
     sg = security_groups.find { |sg| sg.group_id == group_id }
     return unless sg
 
-    inventory = Inventory::SecurityGroup::Open.new(@options)
-    inventory.ports_open_to_world(sg)
+    aws_inventory = Inventory::SecurityGroup::Open.new(@options)
+    aws_inventory.ports_open_to_world(sg)
   end
 end

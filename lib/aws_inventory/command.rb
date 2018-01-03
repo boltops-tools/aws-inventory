@@ -5,14 +5,14 @@ module Inventory
     class << self
       def dispatch(m, args, options, config)
         # Allow calling for help via:
-        #   inventory command help
-        #   inventory command -h
-        #   inventory command --help
-        #   inventory command -D
+        #   aws-inventory command help
+        #   aws-inventory command -h
+        #   aws-inventory command --help
+        #   aws-inventory command -D
         #
         # as well thor's normal way:
         #
-        #   inventory help command
+        #   aws-inventory help command
         help_flags = Thor::HELP_MAPPINGS + ["help"]
         if args.length > 1 && !(args & help_flags).empty?
           args -= help_flags

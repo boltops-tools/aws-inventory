@@ -1,6 +1,6 @@
 class Inventory::Ecs < Inventory::Base
-  autoload :Service, "inventory/ecs/service"
-  autoload :Cluster, "inventory/ecs/cluster"
+  autoload :Service, "aws_inventory/ecs/service"
+  autoload :Cluster, "aws_inventory/ecs/cluster"
 
   # Override report
   def report
