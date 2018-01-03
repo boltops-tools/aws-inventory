@@ -1,4 +1,4 @@
-module Inventory::SecurityGroup::Shared
+module AwsInventory::SecurityGroup::Shared
   def used_security_groups
     groups = instances.inject([]) do |results, i|
       results += i.security_groups

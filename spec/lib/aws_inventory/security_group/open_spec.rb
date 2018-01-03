@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe Inventory::SecurityGroup::Open do
-  let(:reporter) { Inventory::SecurityGroup::Open.new({}) }
+describe AwsInventory::SecurityGroup::Open do
+  let(:reporter) { AwsInventory::SecurityGroup::Open.new({}) }
 
   it "combine_ports" do
     ports = [22]

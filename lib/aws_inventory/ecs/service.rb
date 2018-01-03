@@ -1,4 +1,4 @@
-class Inventory::Ecs::Service < Inventory::Base
+class AwsInventory::Ecs::Service < AwsInventory::Base
   def header
     ["Service", "Cluster", "Running Tasks"]
   end

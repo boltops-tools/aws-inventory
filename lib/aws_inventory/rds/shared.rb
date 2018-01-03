@@ -1,4 +1,4 @@
-module Inventory::Rds::Shared
+module AwsInventory::Rds::Shared
   # pretty name of vpc
   def vpc_name(db)
     group_ids = db.vpc_security_groups.map(&:vpc_security_group_id)
@@ -12,7 +12,7 @@ module Inventory::Rds::Shared
   end
 
   def lookup_vpc_name(vpc_id)
-    aws_inventory_vpc = Inventory::Vpc.new(@options)
+    aws_inventory_vpc = AwsInventory::Vpc.new(@options)
     aws_inventory_vpc.vpc_name(vpc_id)
   end
 

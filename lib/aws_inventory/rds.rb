@@ -1,4 +1,4 @@
-class Inventory::Rds < Inventory::Base
+class AwsInventory::Rds < AwsInventory::Base
   autoload :Shared, "aws_inventory/rds/shared"
   autoload :Summary, "aws_inventory/rds/summary"
   autoload :Port, "aws_inventory/rds/port"

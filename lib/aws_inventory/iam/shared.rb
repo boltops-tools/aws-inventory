@@ -1,4 +1,4 @@
-module Inventory::Iam::Shared
+module AwsInventory::Iam::Shared
   def group_names(user)
     groups = groups_for(user)
     groups.map(&:group_name)

@@ -1,7 +1,7 @@
 require 'aws-sdk'
 
-module Inventory::AwsServices
-  include Inventory::Shared
+module AwsInventory::AwsServices
+  include AwsInventory::Shared
 
   def cfn
     @cfn ||= Aws::CloudFormation::Client.new

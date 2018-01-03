@@ -1,4 +1,4 @@
-class Inventory::Vpc < Inventory::Base
+class AwsInventory::Vpc < AwsInventory::Base
   def header
     ["Name", "Vpc ID", "CIDR", "Subnets", "Instances"]
   end

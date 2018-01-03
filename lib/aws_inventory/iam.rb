@@ -1,4 +1,4 @@
-class Inventory::Iam < Inventory::Base
+class AwsInventory::Iam < AwsInventory::Base
   autoload :Shared, "aws_inventory/iam/shared"
   autoload :Summary, "aws_inventory/iam/summary"
   autoload :User, "aws_inventory/iam/user"

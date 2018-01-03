@@ -1,4 +1,4 @@
-class Inventory::Ecs < Inventory::Base
+class AwsInventory::Ecs < AwsInventory::Base
   autoload :Service, "aws_inventory/ecs/service"
   autoload :Cluster, "aws_inventory/ecs/cluster"
 

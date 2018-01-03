@@ -3,8 +3,8 @@
 #   header - header row to display.  Array of strings.
 #   data - data to display under header. 2D Array.
 #     Each item in the array represents a row of data.
-class Inventory::Base
-  include Inventory::AwsServices
+class AwsInventory::Base
+  include AwsInventory::AwsServices
 
   def initialize(options)
     @options = options
@@ -15,7 +15,7 @@ class Inventory::Base
 
     results = sort(data)
     results.unshift(header) if header
-    presenter = Inventory::Presenter.new(@options, results)
+    presenter = AwsInventory::Presenter.new(@options, results)
     presenter.display
   end
 

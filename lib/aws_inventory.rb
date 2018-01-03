@@ -3,7 +3,7 @@ require "aws_inventory/version"
 require "text-table"
 require "active_support/all"
 
-module Inventory
+module AwsInventory
   autoload :Base, "aws_inventory/base"
   autoload :Help, "aws_inventory/help"
   autoload :Command, "aws_inventory/command"

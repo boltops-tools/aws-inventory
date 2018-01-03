@@ -1,5 +1,5 @@
-class Inventory::SecurityGroup
-  class Summary < Inventory::Base
+class AwsInventory::SecurityGroup
+  class Summary < AwsInventory::Base
     include Shared
 
     def header

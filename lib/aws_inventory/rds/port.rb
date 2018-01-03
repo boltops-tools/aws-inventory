@@ -1,5 +1,5 @@
-class Inventory::Rds
-  class Port < Inventory::Base
+class AwsInventory::Rds
+  class Port < AwsInventory::Base
     include Shared
 
     def header

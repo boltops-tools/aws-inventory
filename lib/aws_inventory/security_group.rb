@@ -1,4 +1,4 @@
-class Inventory::SecurityGroup < Inventory::Base
+class AwsInventory::SecurityGroup < AwsInventory::Base
   autoload :Shared, "aws_inventory/security_group/shared"
   autoload :Summary, "aws_inventory/security_group/summary"
   autoload :Open, "aws_inventory/security_group/open"

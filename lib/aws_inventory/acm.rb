@@ -1,4 +1,4 @@
-class Inventory::Acm < Inventory::Base
+class AwsInventory::Acm < AwsInventory::Base
   def header
     ["Domain", "Cert Arn"]
   end

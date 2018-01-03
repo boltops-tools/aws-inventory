@@ -1,4 +1,4 @@
-class Inventory::Route53 < Inventory::Base
+class AwsInventory::Route53 < AwsInventory::Base
   def header
     ["Domain", "Record Set Count"]
   end

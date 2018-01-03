@@ -1,5 +1,5 @@
-class Inventory::Rds
-  class Summary < Inventory::Base
+class AwsInventory::Rds
+  class Summary < AwsInventory::Base
     include Shared
 
     def header

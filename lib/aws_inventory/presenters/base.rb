@@ -1,4 +1,4 @@
-class Inventory::Presenter::Base
+class AwsInventory::Presenter::Base
   def initialize(options, data)
     @options = options
     @data = data

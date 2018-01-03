@@ -1,4 +1,4 @@
-class Inventory::Presenter
+class AwsInventory::Presenter
   autoload :Base, "aws_inventory/presenters/base"
   autoload :Tab, "aws_inventory/presenters/tab"
   autoload :Table, "aws_inventory/presenters/table"
@@ -10,7 +10,7 @@ class Inventory::Presenter
   end
 
   def display
-    presenter_class = "Inventory::Presenter::#{format.classify}".constantize
+    presenter_class = "AwsInventory::Presenter::#{format.classify}".constantize
     presenter = presenter_class.new(@options, @data)
     presenter.display
   end

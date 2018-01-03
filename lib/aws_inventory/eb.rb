@@ -1,4 +1,4 @@
-class Inventory::Eb < Inventory::Base
+class AwsInventory::Eb < AwsInventory::Base
   def header
     ["Environment", "Application", "Solution Stack"]
   end

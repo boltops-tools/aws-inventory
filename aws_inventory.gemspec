@@ -5,7 +5,7 @@ require "aws_inventory/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "aws-inventory"
-  spec.version       = Inventory::VERSION
+  spec.version       = AwsInventory::VERSION
   spec.authors       = ["Tung Nguyen"]
   spec.email         = ["tongueroo@gmail.com"]
   spec.description   = %q{Tool to inventory AWS account}

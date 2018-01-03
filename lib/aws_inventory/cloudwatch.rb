@@ -1,6 +1,6 @@
 require "action_view"
 
-class Inventory::Cloudwatch < Inventory::Base
+class AwsInventory::Cloudwatch < AwsInventory::Base
   include ActionView::Helpers::DateHelper
 
   def header

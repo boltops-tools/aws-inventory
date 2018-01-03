@@ -1,6 +1,6 @@
 require 'text-table'
 
-class Inventory::Presenter::Table < Inventory::Presenter::Base
+class AwsInventory::Presenter::Table < AwsInventory::Presenter::Base
   def display
     table = Text::Table.new
     table.head = data.shift

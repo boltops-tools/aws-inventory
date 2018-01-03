@@ -1,4 +1,4 @@
-module Inventory::Shared
+module AwsInventory::Shared
   def instances
     return @instances if @instances
 

@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe Inventory::Base do
+describe AwsInventory::Base do
   it "eager_load!" do
-    Inventory::Base.eager_load!
+    AwsInventory::Base.eager_load!
   end
 end

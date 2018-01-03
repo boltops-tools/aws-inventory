@@ -1,7 +1,7 @@
 require 'facets/array/arrange'
 
-class Inventory::SecurityGroup
-  class Open < Inventory::Base
+class AwsInventory::SecurityGroup
+  class Open < AwsInventory::Base
     include Shared
 
     def header

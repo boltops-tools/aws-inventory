@@ -1,4 +1,4 @@
-class Inventory::Keypair < Inventory::Base
+class AwsInventory::Keypair < AwsInventory::Base
   def header
     ["Key Name", "Instance Count"]
   end

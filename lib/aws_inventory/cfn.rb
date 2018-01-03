@@ -1,4 +1,4 @@
-class Inventory::Cfn < Inventory::Base
+class AwsInventory::Cfn < AwsInventory::Base
   ALL_STATUSES = %w[
     REVIEW_IN_PROGRESS
     CREATE_FAILED

@@ -1,4 +1,4 @@
-class Inventory::Ecs::Cluster < Inventory::Base
+class AwsInventory::Ecs::Cluster < AwsInventory::Base
   def header
     ["Cluster", "Container Instances", "Running Tasks"]
   end

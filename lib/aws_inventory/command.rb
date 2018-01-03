@@ -1,6 +1,6 @@
 require "thor"
 
-module Inventory
+module AwsInventory
   class Command < Thor
     class << self
       def dispatch(m, args, options, config)

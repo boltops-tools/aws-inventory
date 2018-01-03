@@ -5,7 +5,7 @@ require "spec_helper"
 #
 # to run specs with new fresh data from aws api calls
 #   $ rake clean:vcr ; time rake
-describe Inventory::CLI do
+describe AwsInventory::CLI do
   before(:all) do
     @args = ""
   end

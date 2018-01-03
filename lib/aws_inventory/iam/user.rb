@@ -1,5 +1,5 @@
-class Inventory::Iam
-  class User < Inventory::Base
+class AwsInventory::Iam
+  class User < AwsInventory::Base
     include Shared
 
     def header

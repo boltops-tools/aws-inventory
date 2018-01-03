@@ -1,4 +1,4 @@
-module Inventory
+module AwsInventory
   class CLI < Command
     class_option :verbose, type: :boolean
     class_option :header, default: true, type: :boolean

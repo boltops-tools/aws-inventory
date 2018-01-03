@@ -1,6 +1,6 @@
 require "json"
 
-class Inventory::Presenter::Json < Inventory::Presenter::Base
+class AwsInventory::Presenter::Json < AwsInventory::Presenter::Base
   def display
     json_data = {
       header: data.shift,

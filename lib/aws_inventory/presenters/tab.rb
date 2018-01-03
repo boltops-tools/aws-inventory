@@ -1,4 +1,4 @@
-class Inventory::Presenter::Tab < Inventory::Presenter::Base
+class AwsInventory::Presenter::Tab < AwsInventory::Presenter::Base
   def display
     data.each do |row|
       puts row.join("\t")

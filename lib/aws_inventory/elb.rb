@@ -1,4 +1,4 @@
-class Inventory::Elb < Inventory::Base
+class AwsInventory::Elb < AwsInventory::Base
   def header
     ["ELB", "Type", "Security Group", "Open Ports"]
   end
@@ -60,12 +60,12 @@ class Inventory::Elb < Inventory::Base
   end
 
   # Returns an Array of ports with a cidr of 0.0.0.0/0
-  # Delegates to Inventory::SecurityGroup
+  # Delegates to AwsInventory::SecurityGroup
   def open_ports(group_id)
     sg = security_groups.find { |sg| sg.group_id == group_id }
     return unless sg
 
-    aws_inventory = Inventory::SecurityGroup::Open.new(@options)
+    aws_inventory = AwsInventory::SecurityGroup::Open.new(@options)
     aws_inventory.ports_open_to_world(sg)
   end
 end

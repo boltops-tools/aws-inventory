@@ -1,4 +1,4 @@
-class Inventory::Ec2 < Inventory::Base
+class AwsInventory::Ec2 < AwsInventory::Base
   def header
     ["Name", "Instance Id", "Instance Type", "Platform", "Security Groups"]
   end
