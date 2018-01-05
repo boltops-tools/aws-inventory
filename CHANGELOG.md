@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project *tries* to adhere to [Semantic Versioning](http://semver.org/), even before v1.0.
 
+## [0.4.4]
+* fix account for elbs using security groups
+
 ## [0.4.3]
 * account for elbs using security groups
 
