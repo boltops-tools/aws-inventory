@@ -69,7 +69,7 @@ class AwsInventory::SecurityGroup
         ports = port.is_a?(Range) ? port.to_a : [port]
         array += ports
         array
-      end.uniq
+      end.uniq.compact
       ports.arrange
     end
   end
