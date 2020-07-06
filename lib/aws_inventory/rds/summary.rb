@@ -3,15 +3,15 @@ class AwsInventory::Rds
     include Shared
 
     def header
-      ["Name", "Engine", "Instance Class", "Publicly Accessible", "VPC", "Security Groups"]
+      ["DB Identifier", "Engine", "Instance Class", "Publicly Accessible", "VPC", "Security Groups"]
       #
     end
 
     def data
       db_instances.map do |db|
         [
-          db.db_name,
-          db.engine,
+          db.db_instance_identifier,
+          "#{db.engine} #{db.engine_version}",
           db.db_instance_class,
           db.publicly_accessible ? "yes" : "no",
           vpc_name(db),
