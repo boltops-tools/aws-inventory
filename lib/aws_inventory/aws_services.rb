@@ -1,4 +1,15 @@
-require 'aws-sdk'
+require 'aws-sdk-cloudformation'
+require 'aws-sdk-ec2'
+require 'aws-sdk-pricing'
+require 'aws-sdk-rds'
+require 'aws-sdk-route53'
+require 'aws-sdk-acm'
+require 'aws-sdk-elasticloadbalancing'
+require 'aws-sdk-elasticloadbalancingv2'
+require 'aws-sdk-elasticbeanstalk'
+require 'aws-sdk-ecs'
+require 'aws-sdk-iam'
+require 'aws-sdk-elasticbeanstalk'
 
 module AwsInventory::AwsServices
   include AwsInventory::Shared

@@ -1,3 +1,5 @@
+# TODO: replace this with cli-format gem.
+# Example of this is in the open-ports gem
 class AwsInventory::Presenter
   autoload :Base, "aws_inventory/presenters/base"
   autoload :Tab, "aws_inventory/presenters/tab"

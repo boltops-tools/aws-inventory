@@ -14,6 +14,11 @@ class AwsInventory::Base
     return if test_mode
 
     results = sort(data)
+    if results.size == 0
+      puts "No results found"
+      return
+    end
+
     results.unshift(header) if header
     presenter = AwsInventory::Presenter.new(@options, results)
     presenter.display
