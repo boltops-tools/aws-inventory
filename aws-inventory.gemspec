@@ -33,7 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "aws-sdk-elasticbeanstalk"
   spec.add_dependency "aws-sdk-ecs"
   spec.add_dependency "aws-sdk-iam"
-  spec.add_dependency "aws-sdk-elasticbeanstalk"
   spec.add_dependency "activesupport"
   spec.add_dependency "text-table"
   spec.add_dependency "facets"
