@@ -21,6 +21,7 @@ module AwsInventory
   autoload :Elb, "aws_inventory/elb"
   autoload :Eb, "aws_inventory/eb"
   autoload :Ecs, "aws_inventory/ecs"
+  autoload :Eks, "aws_inventory/eks"
   autoload :Keypair, "aws_inventory/keypair"
   autoload :Iam, "aws_inventory/iam"
   autoload :Cloudwatch, "aws_inventory/cloudwatch"

@@ -65,6 +65,12 @@ module AwsInventory
       Ecs.new(options).report
     end
 
+    desc "eks", "report eks inventory"
+    long_desc Help.text(:eks)
+    def eks
+      Eks.new(options).report
+    end
+
     desc "keypair", "report keypair inventory"
     long_desc Help.text(:keypair)
     def keypair

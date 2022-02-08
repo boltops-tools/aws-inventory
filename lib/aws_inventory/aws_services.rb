@@ -43,6 +43,10 @@ module AwsInventory::AwsServices
     @ecs ||= Aws::ECS::Client.new
   end
 
+  def eks
+    @eks ||= Aws::EKS::Client.new
+  end
+
   def iam
     @iam ||= Aws::IAM::Client.new
   end
