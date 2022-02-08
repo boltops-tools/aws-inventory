@@ -8,7 +8,7 @@ module AwsInventory::Rds::Shared
     vpc_ids.map do |vpc_id|
       pretty_vpc_name = lookup_vpc_name(vpc_id)
       "#{vpc_id} (#{pretty_vpc_name})"
-    end
+    end.join(', ')
   end
 
   def lookup_vpc_name(vpc_id)
@@ -22,7 +22,7 @@ module AwsInventory::Rds::Shared
 
   def pretty_vpc_security_group(db)
     groups = vpc_security_groups(db)
-    groups.map { |g| "#{g.group_id} (#{g.group_name})" }
+    groups.map { |g| "#{g.group_id} (#{g.group_name})" }.join(', ')
   end
 
   # pretty name of the vpc security groups
